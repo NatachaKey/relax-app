@@ -1,7 +1,7 @@
 particlesJS("particles-js", {
     "particles": {
       "number": {
-        "value": 380,
+        "value": 200,
         "density": {
           "enable": true,
           "value_area": 800
@@ -142,7 +142,7 @@ particlesJS("particles-js", {
   }
   
 
-  const timer = 3;
+  const timer = 1;
 let amountTime = timer*60;
 
 function calculateTime(){
@@ -164,6 +164,8 @@ function calculateTime(){
 
     function stopTimer(){
         clearInterval(timerId);
+       document.querySelector("#myAudio").pause();
+       document.querySelector("#myImage").src=images[0];
     }
 }
 

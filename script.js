@@ -144,7 +144,7 @@ particlesJS("particles-js", {
   }
   
 
-  const timer = 1;
+  const timer = 3;
 let amountTime = timer*60;
 
 function calculateTime(){

@@ -62,7 +62,7 @@ particlesJS("particles-js", {
         "bounce": false,
         "attract": {
           "enable": false,
-          "rotateX": 1200,
+          "rotateX": 600,
           "rotateY": 1200
         }
       }

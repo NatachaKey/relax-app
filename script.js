@@ -140,7 +140,7 @@ particlesJS("particles-js", {
   function stopMusic(){
       document.querySelector("#myImage").src=images[0];
     
-    stopTimer();
+    
   }
   
 
@@ -155,6 +155,10 @@ function calculateTime(){
     if (seconds<10) {
         seconds = "0"+seconds;
     }
+  
+    if (audio.paused){
+      return false
+    } 
 
     countdown.textContent = `${minutes} : ${seconds}`;
     amountTime--;

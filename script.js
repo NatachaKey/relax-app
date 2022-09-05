@@ -1,27 +1,176 @@
-/*
-This is your site JavaScript code - you can add interactivity and carry out processing
-- Initially the JS writes a message to the console, and moves a button you can add from the README
-*/
+particlesJS("particles-js", {
+    "particles": {
+      "number": {
+        "value": 380,
+        "density": {
+          "enable": true,
+          "value_area": 800
+        }
+      },
+      "color": {
+        "value": "#28FFBF"
+      },
+      "shape": {
+        "type": "star",
+        "stroke": {
+          "width": 0,
+          "color": "#000000"
+        },
+        "polygon": {
+          "nb_sides": 5
+        },
+        "image": {
+          "src": "img/github.svg",
+          "width": 100,
+          "height": 100
+        }
+      },
+      "opacity": {
+        "value": 0.5,
+        "random": false,
+        "anim": {
+          "enable": false,
+          "speed": 3,
+          "opacity_min": 0.1,
+          "sync": false
+        }
+      },
+      "size": {
+        "value": 3,
+        "random": true,
+        "anim": {
+          "enable": false,
+          "speed": 40,
+          "size_min": 0.1,
+          "sync": false
+        }
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#28FFBF",
+        "opacity": 0.4,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 5,
+        "direction": "none",
+        "random": false,
+        "straight": false,
+        "out_mode": "out",
+        "bounce": false,
+        "attract": {
+          "enable": false,
+          "rotateX": 1200,
+          "rotateY": 1200
+        }
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": {
+          "enable": true,
+          "mode": "repulse"
+        },
+        "onclick": {
+          "enable": true,
+          "mode": "push"
+        },
+        "resize": true
+      },
+      "modes": {
+        "grab": {
+          "distance": 140,
+          "line_linked": {
+            "opacity": 1
+          }
+        },
+        "bubble": {
+          "distance": 400,
+          "size": 40,
+          "duration": 2,
+          "opacity": 8,
+          "speed": 3
+        },
+        "repulse": {
+          "distance": 80,
+          "duration": 0.4
+        },
+        "push": {
+          "particles_nb": 4
+        },
+        "remove": {
+          "particles_nb": 2
+        }
+      }
+    },
+    "retina_detect": true
+  });
+  
+  
 
-// Print a message in the browser's dev tools console each time the page loads
-// Use your menus or right-click / control-click and choose "Inspect" > "Console"
-console.log("Hello 🌎");
+  
 
-/* 
-Make the "Click me!" button move when the visitor clicks it:
-- First add the button to the page by following the "Next steps" in the README
-*/
-const btn = document.querySelector("button"); // Get the button from the page
-// Detect clicks on the button
-if (btn) {
-  btn.onclick = function() {
-    // The JS works in conjunction with the 'dipped' code in style.css
-    btn.classList.toggle("dipped");
-  };
+  const button = document.querySelector("#myButton");
+  const audio=document.querySelector('#myAudio');
+  const images =[
+  "https://img.icons8.com/ios-filled/100/FFFFFF/play-button-circled--v1.png",
+  "https://img.icons8.com/ios-filled/100/FFFFFF/pause--v1.png"
+  ]
+  
+  button.addEventListener("click", ()=>{
+      
+  
+      if (audio.paused){
+          document.querySelector("#myAudio").play();
+          playMusic();
+  }
+      else {
+          document.querySelector("#myAudio").pause();
+          stopMusic();
+  }
+  })
+  
+  function playMusic(){
+      document.querySelector("#myImage").src=images[1];
+  }
+  
+  function stopMusic(){
+      document.querySelector("#myImage").src=images[0];
+  }
+  
+
+  const timer = 3;
+let amountTime = timer*60;
+
+function calculateTime(){
+    const countdown=document.querySelector("#countdown");
+    let minutes = Math.floor(amountTime/60);
+    let seconds = amountTime%60;
+
+    if (seconds<10) {
+        seconds = "0"+seconds;
+    }
+
+    countdown.textContent = `${minutes} : ${seconds}`;
+    amountTime--;
+
+    if (amountTime<0) {
+        stopTimer();
+        amountTime=0;
+    }
+
+    function stopTimer(){
+        clearInterval(timerId);
+    }
 }
 
-// This is a single line JS comment
-/*
-This is a comment that can span multiple lines 
-- use comments to make your own notes!
-*/
+let timerId = setInterval(calculateTime, 1000);
+
+const musicButton = document.querySelector("#myButton");
+musicButton.addEventListener ("click", function(){
+    document.querySelector("#player").play();
+    document.querySelector("#myVideo").play();
+})

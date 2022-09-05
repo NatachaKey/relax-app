@@ -139,6 +139,8 @@ particlesJS("particles-js", {
   
   function stopMusic(){
       document.querySelector("#myImage").src=images[0];
+    
+    stopTimer();
   }
   
 
@@ -171,8 +173,3 @@ function calculateTime(){
 
 let timerId = setInterval(calculateTime, 1000);
 
-const musicButton = document.querySelector("#myButton");
-musicButton.addEventListener ("click", function(){
-    document.querySelector("#player").play();
-    document.querySelector("#myVideo").play();
-})

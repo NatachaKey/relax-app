@@ -172,6 +172,7 @@ function calculateTime(){
         clearInterval(timerId);
        document.querySelector("#myAudio").pause();
        document.querySelector("#myImage").src=images[0];
+      countdown.textContent= 'La magia empieza con un toque';
     }
 }
 

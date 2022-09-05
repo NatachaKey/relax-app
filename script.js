@@ -1,7 +1,7 @@
 particlesJS("particles-js", {
     "particles": {
       "number": {
-        "value": 200,
+        "value": 150,
         "density": {
           "enable": true,
           "value_area": 800
@@ -178,3 +178,7 @@ function calculateTime(){
 
 let timerId = setInterval(calculateTime, 1000);
 
+
+gsap.from("#particles-js", {y:30, delay:0.8, duration:3, opacity:0, ease:"power4.out"})
+gsap.from("#countdown", {y:-100, delay:0.1, duration:2, opacity:0, ease:"power1.out"})
+gsap.from("#myButton", {x:-100, delay:1.2, duration:3, opacity:0, ease:"power4.out"})

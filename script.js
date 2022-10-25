@@ -108,11 +108,7 @@ particlesJS("particles-js", {
     },
     "retina_detect": true
   });
-  
-  
-
-  
-
+ 
   const button = document.querySelector("#myButton");
   const audio=document.querySelector('#myAudio');
   const images =[
@@ -122,30 +118,26 @@ particlesJS("particles-js", {
   
   button.addEventListener("click", ()=>{
       
-  
       if (audio.paused){
           document.querySelector("#myAudio").play();
           playMusic();
-  }
+      }
       else {
           document.querySelector("#myAudio").pause();
           stopMusic();
-  }
-  })
+      }
+      })
   
   function playMusic(){
       document.querySelector("#myImage").src=images[1];
   }
   
   function stopMusic(){
-      document.querySelector("#myImage").src=images[0];
-    
-    
+      document.querySelector("#myImage").src=images[0]; 
   }
   
-
   const timer = 3;
-let amountTime = timer*60;
+  let amountTime = timer*60;
 
 function calculateTime(){
     const countdown=document.querySelector("#countdown");
@@ -169,15 +161,14 @@ function calculateTime(){
     }
 
     function stopTimer(){
-        clearInterval(timerId);
+       clearInterval(timerId);
        document.querySelector("#myAudio").pause();
        document.querySelector("#myImage").src=images[0];
-      countdown.textContent= 'La magia empieza con un toque';
+       countdown.textContent= 'La magia empieza con un toque';
     }
 }
 
 let timerId = setInterval(calculateTime, 1000);
-
 
 gsap.from("#particles-js", {y:30, delay:0.8, duration:3, opacity:0, ease:"power4.out"})
 gsap.from("#countdown", {y:-100, delay:0.1, duration:2, opacity:0, ease:"power1.out"})

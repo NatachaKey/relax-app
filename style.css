@@ -15,7 +15,6 @@ canvas {
     vertical-align: bottom;
 }
   
-  
 #particles-js {
     position: absolute;
     width: 100%;
@@ -39,15 +38,13 @@ canvas {
 h1 {
     font-size: 4.2rem;   
     text-align: center;
-        font-weight: 40; 
+    font-weight: 40; 
 }
 
 @keyframes flicker {
 
     0%, 18%, 22%, 25%, 53%, 57%, 100% {
-
-    text-shadow:
-        
+    text-shadow:        
         0 0 40px #0fa,
         0 0 80px #0fa,
         0 0 90px #0fa,
@@ -55,26 +52,26 @@ h1 {
         0 0 150px #0fa;
 }
 
-20%, 24%, 55% {        
-    text-shadow: none;
+    20%, 24%, 55% {           
+      text-shadow: none;
     }    
-
 }
 
 @media all and (max-width:500px){
-  button{
-    
+
+  button{    
     margin-left: 0px;
   }
   
-.neonText {
+  .neonText {
     animation: flicker 5s infinite alternate;
     color: #fff;
-}
+  }
+  
   h1 {
     font-size: 2.9rem;   
     text-align: center;
-        font-weight: 20; 
-    
-}
+    font-weight: 20; 
+  }
+  
 }
